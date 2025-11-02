@@ -1,9 +1,5 @@
-function welcome(name: string) {
-    console.log('Hello ' + name)
-    const user = {
-        name: 'dev',
-    }
-    return user.name
-}
+'use strict'
 
-welcome('dev')
+import { Config } from './config/index.js'
+
+console.log(Config.PORT)
