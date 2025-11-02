@@ -1,3 +1,5 @@
 function welcome(name: string) {
-    console.log('hello')
+    console.log('Hello ' + name)
 }
+
+welcome('dev')
