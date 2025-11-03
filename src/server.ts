@@ -1,5 +1,16 @@
 'use strict'
 
-import { Config } from './config/index.js'
+import app from './app'
+import { Config } from './config/index'
 
-console.log(Config.PORT)
+const startServer = () => {
+    const PORT = Config.PORT
+    try {
+        app.listen(PORT, () => console.log(`Listing on port ${PORT}`))
+    } catch (error) {
+        console.error(error)
+        process.exit(1)
+    }
+}
+
+startServer()
