@@ -11,5 +11,7 @@
         "sourceMap": true,
         "declaration": true,
         "declarationMap": true
-    }
+    },
+    "include": ["src"],
+    "exclude": ["jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }

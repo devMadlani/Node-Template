@@ -8,7 +8,14 @@ export default defineConfig(
     eslint.configs.recommended,
     tseslint.configs.recommendedTypeChecked,
     {
-        ignores: ['dist', 'node_modues', 'eslint.config.mjs'],
+        ignores: [
+            'dist',
+            'node_modues',
+            'eslint.config.mjs',
+            'jest.config.ts',
+            '**/*.spec.ts',
+            '**/*.test.ts',
+        ],
     },
     {
         languageOptions: {
