@@ -3,15 +3,20 @@
     "compilerOptions": {
         "target": "esnext",
         "module": "commonjs",
-        "rootDir": "./src",
+        // "rootDir": "./src",
         "outDir": "./dist",
         "esModuleInterop": true,
         "strict": true,
         "skipLibCheck": true,
         "sourceMap": true,
         "declaration": true,
-        "declarationMap": true
+        "declarationMap": true,
+        "strictPropertyInitialization": false,
+
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "useDefineForClassFields": false
     },
-    "include": ["src"],
+    "include": ["src", "tests"],
     "exclude": ["jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }
