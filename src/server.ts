@@ -13,7 +13,6 @@ const startServer = () => {
             logger.info('Listing on port', { port: PORT })
         })
     } catch (error) {
-        console.error(error)
         process.exit(1)
     }
 }

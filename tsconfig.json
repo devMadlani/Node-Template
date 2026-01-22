@@ -1,9 +1,9 @@
 {
     // Visit https://aka.ms/tsconfig to read more about this file
     "compilerOptions": {
-        "target": "esnext",
+        "target": "ES2020",
         "module": "commonjs",
-        // "rootDir": "./src",
+        "rootDir": ".",
         "outDir": "./dist",
         "esModuleInterop": true,
         "strict": true,
@@ -11,6 +11,7 @@
         "sourceMap": true,
         "declaration": true,
         "declarationMap": true,
+
         "strictPropertyInitialization": false,
 
         "experimentalDecorators": true,
@@ -18,5 +19,5 @@
         "useDefineForClassFields": false
     },
     "include": ["src", "tests"],
-    "exclude": ["jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
+    "exclude": ["jest.config.ts", "**/*.spec.ts", "**/*.test.ts", "tests"]
 }

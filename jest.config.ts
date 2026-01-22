@@ -1,13 +1,15 @@
-import type { Config } from 'jest'
-import { createDefaultPreset } from 'ts-jest'
-
-const tsJestPreset = createDefaultPreset()
-
-const config: Config = {
+/** @type {import('ts-jest').JestConfigWithTsJest} */
+module.exports = {
+    preset: 'ts-jest',
     testEnvironment: 'node',
-    transform: {
-        ...tsJestPreset.transform,
-    },
-}
 
-export default config
+    verbose: true,
+    collectCoverage: true,
+    coverageProvider: 'v8',
+
+    collectCoverageFrom: [
+        'src/**/*.{ts,tsx}',
+        '!tests/**',
+        '!**/node_modules/**',
+    ],
+}
