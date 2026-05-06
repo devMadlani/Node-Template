@@ -1,28 +1,16 @@
-import express, { NextFunction, Request, Response } from 'express'
-import logger from './config/logger'
-import { HttpError } from 'http-errors'
+import express from "express";
 
-const app = express()
+import cookieParser from "cookie-parser";
+import { globalErrorHandler } from "./common/middleware/globalErrorHandler";
 
-app.get('/', (req, res) => {
-    res.send('Welcome')
-})
+const app = express();
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
-    logger.error(err.message)
-    const statusCode = err.statusCode || 500
+app.use(cookieParser());
 
-    res.status(statusCode).json({
-        errors: [
-            {
-                type: err.name,
-                msg: err.message,
-                path: '',
-                location: '',
-            },
-        ],
-    })
-})
+app.get("/", (req, res) => {
+  res.send("Welcome");
+});
 
-export default app
+app.use(globalErrorHandler);
+
+export default app;
